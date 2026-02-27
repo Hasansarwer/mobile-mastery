@@ -31,7 +31,7 @@ export default function App() {
 
         <View style={styles.space} />
 
-        <Button title="Solid Primary" variant="solid" action="primary" disabled={true} onPress={() => Alert.alert("Working")} />
+        <Button title="Solid Primary" variant="solid" action="primary" size="sm" onPress={() => Alert.alert("Working")} />
         <Button title="Solid Secondary" variant="solid" action="secondary" onPress={() => Alert.alert("Working")} />
         <Button title="Solid Success" variant="solid" action="success" onPress={() => Alert.alert("Working")} />
         <Button title="Solid Danger" variant="solid" action="danger" onPress={() => Alert.alert("Working")} />

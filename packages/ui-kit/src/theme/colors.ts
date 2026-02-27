@@ -23,6 +23,6 @@ export const colors = {
     danger: "#f87171",
     success: "#4ade80",
     warning: "#fbbf24",
-    info: "#0ea5e9",
+    info: "#38bdf8",
   },
 };
