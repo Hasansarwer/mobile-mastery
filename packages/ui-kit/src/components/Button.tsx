@@ -1,6 +1,6 @@
 import React from "react";
-import { Pressable, Text, StyleSheet, ViewStyle, StyleProp, TextStyle } from "react-native";
-import { colors, radius, spacing, Variant, Action } from "../theme";
+import { Pressable, Text, StyleSheet, ViewStyle, StyleProp, TextStyle, ActivityIndicator } from "react-native";
+import { colors, radius, spacing, Variant, Action, Size } from "../theme";
 
 
 
@@ -12,6 +12,10 @@ type Props = {
   onPress?: () => void;
   style?: StyleProp<ViewStyle>;
   textStyle?: StyleProp<TextStyle>;
+  disabled?: boolean;
+  loading?: boolean;
+  size?: Size;
+  fullWidth?: boolean;
 };
 
 const actionColors: Record<Action, string> = {
@@ -23,10 +27,41 @@ const actionColors: Record<Action, string> = {
   info: colors.light.info,
 };
 
-export default function Button({ title, onPress, style, textStyle, variant = "solid", action = "primary" }: Props) {
+const sizeStyles: Record<Size, ViewStyle> = {
+  sm: {
+    paddingVertical: spacing.sm,
+    paddingHorizontal: spacing.md,
+  },
+  md: {
+    paddingVertical: spacing.md,
+    paddingHorizontal: spacing.lg,
+  },
+  lg: {
+    paddingVertical: spacing.lg,
+    paddingHorizontal: spacing.xl,
+  },
+};
+
+export default function Button({ 
+    title, 
+    onPress, 
+    style, 
+    textStyle, 
+    variant = "solid", 
+    action = "primary",
+    size = "md",
+    fullWidth = false,
+    disabled = false,
+    loading = false,
+}: Props) {
     const actionColor = actionColors[action];
+    const isDisabled = disabled || loading;
+
     const containerStyles: StyleProp<ViewStyle> = [
     styles.button,
+    sizeStyles[size],
+    fullWidth && { width: "100%" },
+    isDisabled && { backgroundColor: colors.light.muted, borderColor: colors.light.muted },
     variant === "outline" && styles.outline,
     variant === "outline" && { borderColor: actionColor },
     variant === "solid" && { backgroundColor: actionColor },
@@ -37,21 +72,31 @@ export default function Button({ title, onPress, style, textStyle, variant = "so
     const labelStyles: StyleProp<TextStyle> = [
     styles.text,
     variant === "solid" && { color: colors.light.surface },
-    ( variant === "outline" || variant === "text" ) && { color: actionColor },
-    variant === "link" && { color: "#0000FF", textDecorationLine: "underline" },
+    ( variant === "outline" || variant === "text" || variant === "link") && { color: actionColor },
+     variant === "link" && { textDecorationLine: "underline" },
     textStyle,
   ];
   return (
-    <Pressable onPress={onPress} style={containerStyles}>
-      <Text style={labelStyles}>{title}</Text>
+    <Pressable 
+        onPress={onPress}
+        disabled={isDisabled}
+        accessibilityRole="button"
+        accessibilityState={{ disabled: isDisabled, busy: loading }}
+        style={containerStyles}>
+      {loading ? (
+        <ActivityIndicator
+          size="small"
+          color={variant === "solid" ? colors.light.surface : actionColor}
+        />
+      ) : (
+        <Text style={labelStyles}>{title}</Text>
+      )}
     </Pressable>
   );
 }
 
 const styles = StyleSheet.create({
   button: {
-    paddingVertical: spacing.md,
-    paddingHorizontal: spacing.lg,
     borderRadius: radius.md,
     alignItems: "center",
     justifyContent: "center",
