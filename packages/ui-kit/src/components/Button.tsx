@@ -61,11 +61,11 @@ export default function Button({
     styles.button,
     sizeStyles[size],
     fullWidth && { width: "100%" },
-    isDisabled && { backgroundColor: colors.light.muted, borderColor: colors.light.muted },
     variant === "outline" && styles.outline,
     variant === "outline" && { borderColor: actionColor },
     variant === "solid" && { backgroundColor: actionColor },
     (variant === "text" || variant === "link" ) && styles.textLikeButton,
+    isDisabled && { backgroundColor: colors.light.muted, borderColor: colors.light.muted },
     style,
     ];
 
