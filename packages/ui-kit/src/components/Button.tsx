@@ -65,7 +65,7 @@ export default function Button({
     variant === "outline" && { borderColor: actionColor },
     variant === "solid" && { backgroundColor: actionColor },
     (variant === "text" || variant === "link" ) && styles.textLikeButton,
-    isDisabled && { backgroundColor: colors.light.muted, borderColor: colors.light.muted },
+    isDisabled && { backgroundColor: colors.light.muted, borderColor: colors.light.muted, opacity: 0.6 },
     style,
     ];
 
@@ -74,6 +74,7 @@ export default function Button({
     variant === "solid" && { color: colors.light.surface },
     ( variant === "outline" || variant === "text" || variant === "link") && { color: actionColor },
      variant === "link" && { textDecorationLine: "underline" },
+        isDisabled && { color: colors.light.surface },
     textStyle,
   ];
   return (
@@ -113,7 +114,5 @@ const styles = StyleSheet.create({
   text: {
     fontWeight: "600",
   },
-  solidText: {
-    color: colors.light.surface,
-  },
+  
 });
