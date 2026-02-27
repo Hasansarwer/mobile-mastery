@@ -10,7 +10,7 @@ export const colors = {
     danger: "#dc2626",
     success: "#16a34a",
     warning: "#d97706",
-    info: "#2563eb",
+    info: "#0ea5e9",
   },
   dark: {
     primary: "#60a5fa",
@@ -23,6 +23,6 @@ export const colors = {
     danger: "#f87171",
     success: "#4ade80",
     warning: "#fbbf24",
-    info: "#60a5fa",
+    info: "#0ea5e9",
   },
 };

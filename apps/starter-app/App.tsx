@@ -31,7 +31,28 @@ export default function App() {
 
         <View style={styles.space} />
 
-        <Button title="Press Me" variant="solid" onPress={() => Alert.alert("Working")} />
+        <Button title="Solid Primary" variant="solid" action="primary" onPress={() => Alert.alert("Working")} />
+        <Button title="Solid Secondary" variant="solid" action="secondary" onPress={() => Alert.alert("Working")} />
+        <Button title="Solid Success" variant="solid" action="success" onPress={() => Alert.alert("Working")} />
+        <Button title="Solid Danger" variant="solid" action="danger" onPress={() => Alert.alert("Working")} />
+        <Button title="Solid Warning" variant="solid" action="warning" onPress={() => Alert.alert("Working")} />
+        <Button title="Solid Info" variant="solid" action="info" onPress={() => Alert.alert("Working")} />
+        <Button title="Outline Primary" variant="outline" action="primary" onPress={() => Alert.alert("Working")} />
+        <Button title="Outline Secondary" variant="outline" action="secondary" onPress={() => Alert.alert("Working")} />
+        <Button title="Outline Success" variant="outline" action="success" onPress={() => Alert.alert("Working")} />
+        <Button title="Outline Danger" variant="outline" action="danger" onPress={() => Alert.alert("Working")} />
+        <Button title="Outline Warning" variant="outline" action="warning" onPress={() => Alert.alert("Working")} />
+        <Button title="Outline Info" variant="outline" action="info" onPress={() => Alert.alert("Working")} />
+        <Button title="Text Primary" variant="text" action="primary" onPress={() => Alert.alert("Working")} />
+        <Button title="Text Secondary" variant="text" action="secondary" onPress={() => Alert.alert("Working")} />
+        <Button title="Link Primary" variant="link" action="primary" onPress={() => Alert.alert("Working")} />
+        <Button title="Link Secondary" variant="link" action="secondary" onPress={() => Alert.alert("Working")} />
+        <Button title="Link Success" variant="link" action="success" onPress={() => Alert.alert("Working")} />
+        <Button title="Link Danger" variant="link" action="danger" onPress={() => Alert.alert("Working")} />
+        <Button title="Link Warning" variant="link" action="warning" onPress={() => Alert.alert("Working")} />
+        <Button title="Link Info" variant="link" action="info" onPress={() => Alert.alert("Working")} />
+
+
       </View>
     </Screen>
   );
