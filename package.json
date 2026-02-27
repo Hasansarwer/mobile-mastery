@@ -1,0 +1,29 @@
+{
+  "name": "mobile-mastery",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "start:starter": "npm run start --workspace=apps/starter-app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hasansarwer/mobile-mastery.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Hasansarwer/mobile-mastery/issues"
+  },
+  "homepage": "https://github.com/Hasansarwer/mobile-mastery#readme"
+}
