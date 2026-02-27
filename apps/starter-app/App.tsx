@@ -31,7 +31,7 @@ export default function App() {
 
         <View style={styles.space} />
 
-        <Button title="Press Me" onPress={() => Alert.alert("Working")} />
+        <Button title="Press Me" variant="solid" onPress={() => Alert.alert("Working")} />
       </View>
     </Screen>
   );
