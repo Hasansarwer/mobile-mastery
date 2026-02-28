@@ -93,6 +93,13 @@ export default function App() {
                     action={item.done ? "warning" : "success"}
                     onPress={() => toggleTask(item.id)}
                   />
+                  <Spacer size="sm" horizontal/>
+                  <Button
+                    title={"Delete"}
+                    variant="text"
+                    action="danger"
+                    onPress={() => deleteTask(item.id)}
+                  />
                 </Row>
               </Row>
             </Card>
