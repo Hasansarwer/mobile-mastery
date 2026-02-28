@@ -33,7 +33,7 @@ export default function App() {
     };
 
     setTasks((prev) => [
-      { id: Date.now().toString(), title: task, done: false },
+      { id: Date.now().toString(), title: task.trim(), done: false },
       ...prev,
     ]);
     setTask("");
@@ -84,9 +84,16 @@ export default function App() {
           keyExtractor={(item) => item.id}
           renderItem={({ item }) => (
             <Card style={styles.taskCard}>
-              <Row style={{ justifyContent: "space-between" }}>
-                <AppText>{item.title}</AppText>
-                <AppText>{item.done ? "Done" : "Pending"}</AppText>
+              <Row style={styles.taskRow}>
+                <AppText style={item.done && styles.doneText }>{item.title}</AppText>
+                <Row>
+                  <Button
+                    title={item.done ? "Undo" : "Done"}
+                    variant="text"
+                    action={item.done ? "warning" : "success"}
+                    onPress={() => toggleTask(item.id)}
+                  />
+                </Row>
               </Row>
             </Card>
           )}
@@ -105,4 +112,13 @@ const styles = StyleSheet.create({
   taskCard: {
     marginBottom: spacing.md,
   },
+  taskRow: {
+    justifyContent: "space-between",
+  },
+
+  doneText: {
+    textDecorationLine: "line-through",
+    opacity: 0.6,
+  },
+
 });
