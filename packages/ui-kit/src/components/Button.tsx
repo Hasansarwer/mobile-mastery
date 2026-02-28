@@ -74,10 +74,13 @@ export default function Button({
 
     const labelStyles: StyleProp<TextStyle> = [
     styles.text,
-    variant === "solid" && { color: colors.light.surface },
-    ( variant === "outline" || variant === "text" || variant === "link") && { color: actionColor },
-     variant === "link" && { textDecorationLine: "underline" },
-        isDisabled && { color: colors.light.surface },
+    variant === "solid" ? { color: colors.light.surface } : { color: actionColor },
+    variant === "link" && { textDecorationLine: "underline" },
+    isDisabled &&
+    (variant === "solid"
+    ? { color: colors.light.surface }
+    : { color: colors.light.muted }),
+
     textStyle,
   ];
   return (
