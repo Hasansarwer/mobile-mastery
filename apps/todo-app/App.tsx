@@ -35,6 +35,18 @@ export default function App() {
     setTask("");
   };
 
+  const toggleTask = (id: string) => {
+    setTasks((prev) =>
+      prev.map((t) =>
+        t.id === id ? { ...t, done: !t.done } : t
+      )
+    );
+  };
+
+  const deleteTask = (id: string) => {
+    setTasks((prev) => prev.filter((t) => t.id !== id));
+  };
+
   return (
     <Screen>
       <View style={styles.container}>
