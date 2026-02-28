@@ -65,7 +65,9 @@ export default function Button({
     variant === "outline" && { borderColor: actionColor },
     variant === "solid" && { backgroundColor: actionColor },
     (variant === "text" || variant === "link" ) && styles.textLikeButton,
-    isDisabled && { backgroundColor: colors.light.muted, borderColor: colors.light.muted, opacity: 0.6 },
+    isDisabled && variant === "outline" && { borderColor: colors.light.muted },
+    isDisabled && variant === "solid" && { backgroundColor: colors.light.muted },
+    isDisabled && { borderColor: colors.light.muted, opacity: 0.6 },
     style,
     ];
 
