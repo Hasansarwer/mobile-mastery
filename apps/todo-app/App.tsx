@@ -19,6 +19,7 @@ type Task = {
 };
 
 export default function App() {
+  const [error, setError] = useState("");
   const [task, setTask] = useState("");
   const [tasks, setTasks] = useState<Task[]>([
     { id: "1", title: "Build ui-kit", done: false },
@@ -26,13 +27,17 @@ export default function App() {
   ]);
 
   const addTask = () => {
-    if (!task.trim()) return;
+    if (!task.trim()) {
+      setError("Task title cannot be empty");
+      return;
+    };
 
     setTasks((prev) => [
       { id: Date.now().toString(), title: task, done: false },
       ...prev,
     ]);
     setTask("");
+    setError("");
   };
 
   const toggleTask = (id: string) => {
@@ -58,7 +63,11 @@ export default function App() {
             label="New Task"
             placeholder="Enter a task"
             value={task}
-            onChangeText={setTask}
+            onChangeText={(text) => {
+              setTask(text);
+              if (error) setError("");
+            }}
+            error={error}
           />
           <Spacer size="md" />
           <Button title="Add Task" onPress={addTask} fullWidth />
