@@ -74,7 +74,11 @@ export default function App() {
         </Card>
 
         <Spacer size="lg" />
-
+        {tasks.length === 0 ? (
+          <Card>
+            <AppText>No tasks yet. Add your first task.</AppText>
+          </Card>
+        ) : (
         <FlatList
           data={tasks}
           keyExtractor={(item) => item.id}
@@ -87,6 +91,7 @@ export default function App() {
             </Card>
           )}
         />
+        )}
       </View>
     </Screen>
   );
