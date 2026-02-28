@@ -18,7 +18,7 @@ export default function App() {
     <Screen>
       <View style={styles.container}>
         <Heading fontSize="xxl">Starter Preview</Heading>
-        <Spacer size="sm" />
+        <Spacer size="xxl" />
         <AppText>Day 2 ui-kit preview screen</AppText>
 
         <Spacer size="lg" />
@@ -26,13 +26,13 @@ export default function App() {
         <Card>
           <Heading fontSize="lg">Buttons</Heading>
           <Spacer size="md" />
-          <Button title="Primary" onPress={() => Alert.alert("Primary")} />
+          <Button title="Primary" loading={false} disabled={true} onPress={() => Alert.alert("Primary")} />
           <Spacer size="sm" />
-          <Button title="Secondary" action="secondary" />
+          <Button title="Secondary" action="secondary" loading={false} disabled={true} />
           <Spacer size="sm" />
-          <Button title="Outline" variant="outline" />
+          <Button title="Outline" variant="outline" loading={false} disabled={true}/>
           <Spacer size="sm" />
-          <Button title="Link Button" variant="link" />
+          <Button title="Link Button" variant="link" loading={true} disabled={true}/>
         </Card>
 
         <Spacer size="lg" />

@@ -1,11 +1,10 @@
 import React from "react";
 import { Text, TextProps, StyleSheet } from "react-native";
 import { colors, fontSizes } from "../theme";
-import { FontSize } from "../types/types";
 
 
 type Props = TextProps & {
-  fontSize?: FontSize;
+  fontSize?: keyof typeof fontSizes;
 };
 
 

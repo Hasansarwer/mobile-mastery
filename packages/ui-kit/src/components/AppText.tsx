@@ -1,17 +1,17 @@
 import React from 'react';
 import { Text, TextProps } from 'react-native';
-import { colors, typography } from '../theme';
+import { colors, fontSizes } from '../theme';
 
 type Props = TextProps & {
-  size?: keyof typeof typography;
+  fontSize?: keyof typeof fontSizes;
 };
 
-export default function AppText({ size = 'md', style, ...props }: Props) {
+export default function AppText({ fontSize = 'md', style, ...props }: Props) {
     return (
         <Text
             style={[
                 {
-                    fontSize: typography[size],
+                    fontSize: fontSizes[fontSize],
                     color: colors.light.text,
                 },
                 style,
