@@ -66,9 +66,8 @@ export default function Button({
     variant === "outline" && { borderColor: actionColor },
     variant === "solid" && { backgroundColor: actionColor },
     (variant === "text" || variant === "link" ) && styles.textLikeButton,
-    isDisabled && variant === "outline" && { borderColor: colors.light.muted },
     isDisabled && variant === "solid" && { backgroundColor: colors.light.muted },
-    isDisabled && { borderColor: colors.light.muted, opacity: 0.6 },
+    isDisabled && {borderColor: colors.light.muted, opacity: 0.6 },
     style,
     ];
 
@@ -93,7 +92,13 @@ export default function Button({
       {loading ? (
         <ActivityIndicator
           size="small"
-          color={variant === "solid" ? colors.light.surface : actionColor}
+          color={
+            variant === "solid"
+            ? colors.light.surface
+            : isDisabled
+            ? colors.light.muted
+            : actionColor
+          }
         />
       ) : (
         <Text style={labelStyles}>{title}</Text>
