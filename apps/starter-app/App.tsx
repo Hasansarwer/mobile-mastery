@@ -2,10 +2,14 @@ import React from "react";
 import { View, StyleSheet, Alert } from "react-native";
 import {
   Screen,
+  Heading,
   AppText,
   Button,
   Card,
   Input,
+  Spacer,
+  Row,
+  Column,
   spacing,
 } from "@mobile-mastery/ui-kit";
 
@@ -13,46 +17,47 @@ export default function App() {
   return (
     <Screen>
       <View style={styles.container}>
-        <AppText size="xl" style={styles.title}>
-          Starter App
-        </AppText>
+        <Heading fontSize="xxl">Starter Preview</Heading>
+        <Spacer size="sm" />
+        <AppText>Day 2 ui-kit preview screen</AppText>
 
-        <AppText style={styles.subtitle}>
-          Day 1 design system preview
-        </AppText>
+        <Spacer size="lg" />
 
-        <Card style={styles.card}>
-          <AppText style={styles.cardText}>
-            This card comes from the shared ui-kit package.
-          </AppText>
+        <Card>
+          <Heading fontSize="lg">Buttons</Heading>
+          <Spacer size="md" />
+          <Button title="Primary" onPress={() => Alert.alert("Primary")} />
+          <Spacer size="sm" />
+          <Button title="Secondary" action="secondary" />
+          <Spacer size="sm" />
+          <Button title="Outline" variant="outline" />
+          <Spacer size="sm" />
+          <Button title="Link Button" variant="link" />
         </Card>
 
-        <Input placeholder="Type something..." />
+        <Spacer size="lg" />
 
-        <View style={styles.space} />
+        <Card>
+          <Heading fontSize="lg">Input</Heading>
+          <Spacer size="md" />
+          <Input label="Task title" placeholder="Enter task..." />
+        </Card>
 
-        <Button title="Solid Primary" variant="solid" action="primary" disabled={true} size="sm" onPress={() => Alert.alert("Working")} />
-        <Button title="Solid Secondary" variant="solid" action="secondary" onPress={() => Alert.alert("Working")} />
-        <Button title="Solid Success" variant="solid" action="success" onPress={() => Alert.alert("Working")} />
-        <Button title="Solid Danger" variant="solid" action="danger" onPress={() => Alert.alert("Working")} />
-        <Button title="Solid Warning" variant="solid" action="warning" onPress={() => Alert.alert("Working")} />
-        <Button title="Solid Info" variant="solid" action="info" onPress={() => Alert.alert("Working")} />
-        <Button title="Outline Primary" variant="outline" action="primary" disabled={true} onPress={() => Alert.alert("Working")} />
-        <Button title="Outline Secondary" variant="outline" action="secondary" onPress={() => Alert.alert("Working")} />
-        <Button title="Outline Success" variant="outline" action="success" onPress={() => Alert.alert("Working")} />
-        <Button title="Outline Danger" variant="outline" action="danger" onPress={() => Alert.alert("Working")} />
-        <Button title="Outline Warning" variant="outline" action="warning" onPress={() => Alert.alert("Working")} />
-        <Button title="Outline Info" variant="outline" action="info" onPress={() => Alert.alert("Working")} />
-        <Button title="Text Primary" variant="text" action="primary" disabled={true} onPress={() => Alert.alert("Working")} />
-        <Button title="Text Secondary" variant="text" action="secondary" onPress={() => Alert.alert("Working")} />
-        <Button title="Link Primary" variant="link" action="primary" onPress={() => Alert.alert("Working")} />
-        <Button title="Link Secondary" variant="link" action="secondary" onPress={() => Alert.alert("Working")} />
-        <Button title="Link Success" variant="link" action="success" onPress={() => Alert.alert("Working")} />
-        <Button title="Link Danger" variant="link" action="danger" onPress={() => Alert.alert("Working")} />
-        <Button title="Link Warning" variant="link" action="warning" onPress={() => Alert.alert("Working")} />
-        <Button title="Link Info" variant="link" action="info" onPress={() => Alert.alert("Working")} />
+        <Spacer size="lg" />
 
-
+        <Card>        
+          <Heading fontSize="lg">Layout</Heading>
+          <Spacer size="md" />
+          <Row style={{ justifyContent: "space-between" }}>
+            <AppText>Left</AppText>
+            <AppText>Right</AppText>
+          </Row>
+          <Spacer size="md" />
+          <Column>
+            <AppText>Item 1</AppText>
+            <AppText>Item 2</AppText>
+          </Column>
+        </Card>
       </View>
     </Screen>
   );
@@ -62,22 +67,5 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: spacing.lg,
-    justifyContent: "center",
-  },
-  title: {
-    marginBottom: spacing.sm,
-    fontWeight: "700",
-  },
-  subtitle: {
-    marginBottom: spacing.lg,
-  },
-  card: {
-    marginBottom: spacing.lg,
-  },
-  cardText: {
-    lineHeight: 22,
-  },
-  space: {
-    height: spacing.lg,
   },
 });

@@ -1,24 +1,19 @@
 import React from "react";
 import { Text, TextProps, StyleSheet } from "react-native";
-import { colors, typography } from "../theme";
+import { colors, fontSizes } from "../theme";
+import { FontSize } from "../theme";
 
-type Level = 1 | 2 | 3 | 4;
 
 type Props = TextProps & {
-  level?: Level;
+  fontSize?: FontSize;
 };
 
-const fontSizes = {
-  1: typography.xxl,
-  2: typography.xl,
-  3: typography.lg,
-  4: typography.md,
-};
 
-export default function Heading({ level = 2, style, ...props }: Props) {
+
+export default function Heading({ fontSize = "xl", style, ...props }: Props) {
   return (
     <Text
-      style={[styles.base, { fontSize: fontSizes[level] }, style]}
+      style={[styles.base, { fontSize: fontSizes[fontSize] }, style]}
       {...props}
     />
   );

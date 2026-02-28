@@ -6,3 +6,12 @@ export const typography = {
   xl: 24,
   xxl: 32,
 };
+
+export const fontSizes = {
+  xxl: typography.xxl,
+  xl: typography.xl,
+  lg: typography.lg,
+  md: typography.md,
+  sm: typography.sm,
+  xs: typography.xs,
+};
