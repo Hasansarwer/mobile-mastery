@@ -12,7 +12,9 @@
     "doc": "docs"
   },
   "scripts": {
-    "start:starter": "npm run start --workspace=apps/starter-app"
+    "start:starter": "npm run start --workspace=apps/starter-app",
+    "start:todo": "npm run start --workspace=apps/todo-app"
+
   },
   "repository": {
     "type": "git",
