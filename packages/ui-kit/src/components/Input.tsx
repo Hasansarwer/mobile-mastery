@@ -1,22 +1,22 @@
 import React from "react";
-import { 
-    TextInput, 
-    TextInputProps, 
-    StyleSheet,
-    View,
-    Text,
-    StyleProp,
-    ViewStyle, 
+import {
+  TextInput,
+  TextInputProps,
+  StyleSheet,
+  View,
+  Text,
+  StyleProp,
+  ViewStyle,
 } from "react-native";
 import { colors, radius, spacing } from "../theme";
 import { Size } from "../types/types";
 
 type Props = TextInputProps & {
-    label?: string;
-    error?: string;
-    size?: Size;
-    fullWidth?: boolean;
-    containerStyle?: StyleProp<ViewStyle>;
+  label?: string;
+  error?: string;
+  size?: Size;
+  fullWidth?: boolean;
+  containerStyle?: StyleProp<ViewStyle>;
 };
 
 const sizeStyles: Record<Size, ViewStyle> = {
@@ -46,15 +46,16 @@ export default function Input({
 }: Props) {
   return (
     <View style={[fullWidth && styles.fullWidth, containerStyle]}>
-         {label ? <Text style={styles.label}>{label}</Text> : null}
-        <TextInput
-          editable={editable}
-          placeholderTextColor={colors.light.muted}
-          style={[
+      {label ? <Text style={styles.label}>{label}</Text> : null}
+
+      <TextInput
+        editable={editable}
+        placeholderTextColor={colors.light.muted}
+        style={[
           styles.input,
           sizeStyles[size],
           !editable && styles.disabledInput,
-          error && styles.errorInput,
+          !!error && styles.errorInput,
           style,
         ]}
         {...props}
