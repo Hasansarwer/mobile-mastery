@@ -8,7 +8,8 @@ import {
     StyleProp,
     ViewStyle, 
 } from "react-native";
-import { colors, radius, spacing, Size } from "../theme";
+import { colors, radius, spacing } from "../theme";
+import { Size } from "../types/types";
 
 type Props = TextInputProps & {
     label?: string;

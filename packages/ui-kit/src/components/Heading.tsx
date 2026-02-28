@@ -1,7 +1,7 @@
 import React from "react";
 import { Text, TextProps, StyleSheet } from "react-native";
 import { colors, fontSizes } from "../theme";
-import { FontSize } from "../theme";
+import { FontSize } from "../types/types";
 
 
 type Props = TextProps & {

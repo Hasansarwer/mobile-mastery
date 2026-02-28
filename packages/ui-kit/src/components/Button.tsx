@@ -1,6 +1,7 @@
 import React from "react";
 import { Pressable, Text, StyleSheet, ViewStyle, StyleProp, TextStyle, ActivityIndicator } from "react-native";
-import { colors, radius, spacing, Variant, Action, Size } from "../theme";
+import { colors, radius, spacing } from "../theme";
+import { Variant, Action, Size } from "../types/types";
 
 
 
