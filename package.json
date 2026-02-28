@@ -19,7 +19,11 @@
     "url": "git+https://github.com/Hasansarwer/mobile-mastery.git"
   },
   "keywords": [],
-  "author": "",
+  "author": {
+    "name": "Hasan Sarwer",
+    "email": "hasanmathju@gmail.com",
+    "url": "https://hasansarwer.com"
+  },
   "license": "ISC",
   "type": "commonjs",
   "bugs": {

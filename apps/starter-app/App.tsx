@@ -26,7 +26,7 @@ export default function App() {
         <Card>
           <Heading fontSize="lg">Buttons</Heading>
           <Spacer size="md" />
-          <Button title="Primary" loading={false} disabled={true} onPress={() => Alert.alert("Primary")} />
+          <Button title="Primary" loading={false} disabled={false} onPress={() => Alert.alert("Primary")} />
           <Spacer size="sm" />
           <Button title="Secondary" action="secondary" loading={false} disabled={true} />
           <Spacer size="sm" />
@@ -40,7 +40,7 @@ export default function App() {
         <Card>
           <Heading fontSize="lg">Input</Heading>
           <Spacer size="md" />
-          <Input label="Task title" placeholder="Enter task..." />
+          <Input label="Task title" placeholder="Enter task..." editable={false} />
         </Card>
 
         <Spacer size="lg" />
